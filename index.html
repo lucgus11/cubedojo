@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CubeDojo</title>
+<meta name="description" content="Apprends à résoudre le Rubik's Cube, maîtrise les algorithmes et chronomètre tes résolutions. Fonctionne hors ligne.">
+<meta name="theme-color" content="#f4f1ea">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="CubeDojo">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#app">Aller au contenu</a>
+<header class="topbar">
+  <a class="brand" href="#/"><img src="icons/icon.svg" alt="" width="28" height="28"><span>CubeDojo</span></a>
+  <nav class="topnav" aria-label="Navigation principale">
+    <a data-nav="algos" href="#/algos">Algorithmes</a>
+    <a data-nav="train" href="#/train">Entraînement</a>
+    <a data-nav="timer" href="#/timer">Chrono</a>
+    <a data-nav="guides" href="#/guides">Guides</a>
+  </nav>
+  <div class="top-actions">
+    <button class="ib" id="search-btn" aria-label="Rechercher (Ctrl+K)"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+    <a class="ib" data-nav="settings" href="#/settings" aria-label="Réglages"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></a>
+  </div>
+</header>
+
+<main id="app" tabindex="-1"></main>
+
+<nav class="tabbar" aria-label="Navigation">
+  <a data-nav="home" href="#/"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span>Accueil</span></a>
+  <a data-nav="algos" href="#/algos"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Algos</span></a>
+  <a data-nav="timer" href="#/timer"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 2h6"/></svg><span>Chrono</span></a>
+  <a data-nav="train" href="#/train"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg><span>Entraîner</span></a>
+  <a data-nav="guides" href="#/guides"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/></svg><span>Guides</span></a>
+</nav>
+
+<dialog id="search" class="dlg search">
+  <div class="search-head"><input id="q" type="search" placeholder="Chercher un cas ou un algorithme…" autocomplete="off" aria-label="Recherche"><button class="ib" id="search-close" aria-label="Fermer">✕</button></div>
+  <div id="results"></div>
+</dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:2rem">CubeDojo a besoin de JavaScript.</p></noscript>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
